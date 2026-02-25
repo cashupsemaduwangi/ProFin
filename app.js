@@ -71,7 +71,7 @@ window.addItem = (category, isDefault = false, defaultName = "") => {
   const container = document.getElementById(`${category}-inputs`);
   const div = document.createElement("div");
 
-  // Menambahkan 'items-center' agar input dan tombol sejajar secara vertikal
+  // 'items-center' memastikan input nama dan nominal sejajar secara vertikal
   div.className = "flex gap-2 mb-2 animate-slide-in items-center";
 
   div.innerHTML = `
@@ -84,7 +84,7 @@ window.addItem = (category, isDefault = false, defaultName = "") => {
             <input type="text" 
                    class="neu-input text-xs nominal-input w-full" 
                    placeholder="0">
-            <input type="hidden" type="number" class="nominal-raw ${category}-raw">
+            <input type="hidden" class="nominal-raw ${category}-raw">
         </div>
 
         <div class="w-8 flex justify-center">
@@ -111,6 +111,7 @@ window.addItem = (category, isDefault = false, defaultName = "") => {
     };
   }
 };
+
 document.getElementById("penghasilan").addEventListener("input", (e) => {
   rawIncome = parseIDR(e.target.value);
   e.target.value = formatIDR(rawIncome);
