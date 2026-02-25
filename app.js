@@ -7,7 +7,7 @@ let rawIncome = 0;
 // KONFIGURASI AI
 // Ganti dengan API Key milikmu sendiri dari https://aistudio.google.com/
 // String hasil encode Base64
-const obfuscatedKey = "QUl6YVN5QlQ4Rk9lZ1lJNU5HbUFiV0pnV0oxeFlwblYwRm1HVkNV";
+const obfuscatedKey = "QUl6YVN5QlhyNEM3Vy1KVFFhTFlET0pRZW1oTlNneVNDeWwyemsw";
 
 // Fungsi untuk membuka kunci saat aplikasi jalan
 const API_KEY = atob(obfuscatedKey);
