@@ -150,7 +150,7 @@ async function getAIAdvice(data, sisa, isDefisit) {
       {
         parts: [
           {
-            text: `Kamu adalah asisten keuangan atas nama Profin yang sangat profesional, semua yang kamu jelaskan memiliki sumber dari ahli atau artikel yang valid. Analisis data: Pemasukan Rp${rawIncome}, Kebutuhan Rp${data.needs.real}, Keinginan Rp${data.wants.real}, Tabungan Rp${data.savings.real}. Berikan 3 saran singkat dan praktis dalam format HTML li tanpa markdown.`,
+            text: `Kamu adalah asisten keuangan atas nama Profin yang sangat profesional, penjelasanmu singkat padat dan on poin. Analisis data: Pemasukan Rp${rawIncome}, Kebutuhan Rp${data.needs.real}, Keinginan Rp${data.wants.real}, Tabungan Rp${data.savings.real}. Berikan 3 saran singkat dan praktis dalam format HTML li tanpa markdown.`,
           },
         ],
       },
