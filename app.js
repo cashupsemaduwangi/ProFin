@@ -70,15 +70,28 @@ window.nextStep = (step) => {
 window.addItem = (category, isDefault = false, defaultName = "") => {
   const container = document.getElementById(`${category}-inputs`);
   const div = document.createElement("div");
-  div.className = "flex gap-2 mb-2 animate-slide-in";
+
+  // Menambahkan 'items-center' agar input dan tombol sejajar secara vertikal
+  div.className = "flex gap-2 mb-2 animate-slide-in items-center";
+
   div.innerHTML = `
-        <input type="text" class="neu-input text-xs flex-[1.5]" placeholder="Item" value="${defaultName}">
+        <input type="text" 
+               class="neu-input text-xs flex-[1.5] w-0" 
+               placeholder="Item" 
+               value="${defaultName}">
+        
         <div class="relative flex-1">
-            <input type="text" class="neu-input text-xs nominal-input" placeholder="0">
-            <input type="hidden" class="nominal-raw ${category}-raw">
+            <input type="text" 
+                   class="neu-input text-xs nominal-input w-full" 
+                   placeholder="0">
+            <input type="hidden" type="number" class="nominal-raw ${category}-raw">
         </div>
-        ${!isDefault ? '<button class="text-red-400 font-bold px-2">×</button>' : ""}
+
+        <div class="w-8 flex justify-center">
+            ${!isDefault ? '<button class="text-red-400 font-bold px-2 hover:text-red-600">×</button>' : ""}
+        </div>
     `;
+
   container.appendChild(div);
 
   const input = div.querySelector(".nominal-input");
@@ -91,13 +104,13 @@ window.addItem = (category, isDefault = false, defaultName = "") => {
     updateLiveProgress();
   });
 
-  if (!isDefault)
+  if (!isDefault) {
     div.querySelector("button").onclick = () => {
       div.remove();
       updateLiveProgress();
     };
+  }
 };
-
 document.getElementById("penghasilan").addEventListener("input", (e) => {
   rawIncome = parseIDR(e.target.value);
   e.target.value = formatIDR(rawIncome);
